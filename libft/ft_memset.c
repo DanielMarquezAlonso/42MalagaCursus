@@ -1,30 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 18:38:48 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/14 12:33:49 by danmarqu         ###   ########.fr       */
+/*   Created: 2023/09/14 12:35:19 by danmarqu          #+#    #+#             */
+/*   Updated: 2023/09/14 13:02:28 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 //#include <stdio.h>
+//#include <string.h>
 
-int	ft_isprint(int c)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	size_t	i;
+	char	*aux;
+
+	i = 0;
+	aux = (char *)s;
+	while (i < n)
+	{
+		aux[i] = (char)c;
+		i++;
+	}
+	return (s);
 }
 
-// int main()
+// int	main(void)
 // {
-// 	int n = 127;
-// 	printf("%d  ", ft_isprint(n));
-// 		printf("%d  ", isprint(n));
-// 	return 0;
+// 	size_t longitud = 3;
+// 	char b[] = "camisa";
+// 	char c[] = "camisa";
 
+//     printf("%s\n", b);
+// 	ft_memset(b, 'a', longitud);
+//     printf("%s\n", b);
+
+// 	printf("%s\n", c);
+// 	memset(c, 'a', longitud);
+//     printf("%s\n", c);
 // }

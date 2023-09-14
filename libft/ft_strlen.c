@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 18:10:01 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/14 17:09:20 by danmarqu         ###   ########.fr       */
+/*   Created: 2023/09/14 12:14:06 by danmarqu          #+#    #+#             */
+/*   Updated: 2023/09/14 12:32:46 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-// #include <stdio.h>
-// #include <ctype.h>
+//Devuelve el número de caracteres de la cadena "s", sin incluir el nulo de 
+//terminación.
 
-int	ft_isalnum(int c)
+#include "libft.h"
+//#include <stdio.h>
+
+size_t	ft_strlen(const char *s)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
 
 // int main()
 // {
-// 	int n = 123;
-// 	printf("%d  ", ft_isalnum(n));
-// 		printf("%d  ", isalnum(n));
-// 	return 0;
+// 	printf("%zu    ", strlen(""));
+// 	printf("%zu", ft_strlen(""));
 // }
