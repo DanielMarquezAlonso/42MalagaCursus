@@ -11,16 +11,33 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
-// #include <string.h>
+#include <stdio.h>
+#include <string.h>
 
-// size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
-// {}
-
-int main()
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	char des[20] = "hola";
-	char src[20] = "casa";
+	size_t	i;
+	size_t	srcsize;
 
-	printf(strlcpy(des, src));
+	i = 0;
+	srcsize = ft_strlen(src);
+	if (!dst || !src)
+		return (0);
+	if (dstsize != 0)
+	{
+		while (src[i] != '\0' && i < (dstsize - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	return (srcsize);
 }
+// int main(void)
+// {
+// 	char des[20] = "hola";
+// 	char src[20] = "casa";
+
+// 	printf(strlcpy(des, src));
+// }
