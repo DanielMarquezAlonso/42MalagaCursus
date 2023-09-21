@@ -6,12 +6,11 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 18:38:48 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/14 12:33:49 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/09/21 16:01:11 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 int	ft_isprint(int c)
 {

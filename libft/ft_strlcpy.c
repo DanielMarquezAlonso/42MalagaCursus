@@ -6,13 +6,11 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:28:42 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/14 19:55:05 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/09/21 16:02:23 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

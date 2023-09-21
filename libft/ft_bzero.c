@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 13:15:55 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/14 17:31:54 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/09/21 15:57:39 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 //		 If n is zero, bzero() does nothing.
 
 #include "libft.h"
-#include <stdio.h>
-#include <strings.h>
 
 void	ft_bzero(void *s, size_t n)
 {

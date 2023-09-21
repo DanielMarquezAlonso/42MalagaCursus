@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 12:14:06 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/21 16:02:49 by danmarqu         ###   ########.fr       */
+/*   Created: 2023/09/21 12:00:48 by danmarqu          #+#    #+#             */
+/*   Updated: 2023/09/21 16:02:59 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Devuelve el número de caracteres de la cadena "s", sin incluir el nulo de 
-//terminación.
+// DESCRIPTION
+//      The tolower() function converts an upper-case letter to the 
+//      corresponding lower-case letter.  The argument must be representable 
+//      as an unsigned char or the value of EOF.
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }
 
 // int main()
 // {
-// 	printf("%zu    ", strlen(""));
-// 	printf("%zu", ft_strlen(""));
+// 	int ej = 120;
+
+// 	printf("mia: %d", ft_tolower(ej));
+// 	printf("\noriginal: %d", tolower(ej));
 // }

@@ -6,13 +6,11 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 17:32:56 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/14 19:24:24 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/09/21 16:17:29 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
-// #include <strings.h>
 
 void	*ft_memcpy(void *s1, const void *s2, size_t n)
 {
@@ -21,6 +19,8 @@ void	*ft_memcpy(void *s1, const void *s2, size_t n)
 	char	*aux2;
 
 	i = 0;
+	if (s1 == NULL && s2 == NULL)
+		return (NULL);
 	aux = (char *)s1;
 	aux2 = (char *)s2;
 	while (i < n)
@@ -28,6 +28,7 @@ void	*ft_memcpy(void *s1, const void *s2, size_t n)
 		aux[i] = aux2[i];
 		i++;
 	}
+	return (aux);
 }
 
 // int main() {

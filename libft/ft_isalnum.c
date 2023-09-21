@@ -6,13 +6,11 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 18:10:01 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/14 17:09:20 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/09/21 15:57:45 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
-// #include <ctype.h>
 
 int	ft_isalnum(int c)
 {

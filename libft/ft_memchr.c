@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 12:35:19 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/21 16:02:00 by danmarqu         ###   ########.fr       */
+/*   Created: 2023/09/21 16:50:16 by danmarqu          #+#    #+#             */
+/*   Updated: 2023/09/21 17:32:05 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// DESCRIPTION
+//      The memchr() function locates the first occurrence of c (converted to an
+//      unsigned char) in string s.
+
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	char	*aux;
+	unsigned char	*aux;
+	size_t			i;
 
+	aux = (unsigned char *) s;
 	i = 0;
-	aux = (char *)s;
 	while (i < n)
 	{
-		aux[i] = (char)c;
+		if (aux[i] == (unsigned char)c)
+			return ((void *)&aux[i]);
 		i++;
 	}
-	return (s);
+	return (0);
 }
 
-// int	main(void)
+// int main()
 // {
-// 	size_t longitud = 3;
-// 	char b[] = "camisa";
-// 	char c[] = "camisa";
+// 	const char as[] = "loc";
+// 	int c = 111;
 
-//     printf("%s\n", b);
-// 	ft_memset(b, 'a', longitud);
-//     printf("%s\n", b);
+// 	printf("mia: %s", ft_memchr(as, c, 2));
+//  	printf("\noriginal: %s", memchr(as, c, 2));
 
-// 	printf("%s\n", c);
-// 	memset(c, 'a', longitud);
-//     printf("%s\n", c);
 // }

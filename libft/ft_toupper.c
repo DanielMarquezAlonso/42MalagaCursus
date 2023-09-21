@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 12:14:06 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/21 16:02:49 by danmarqu         ###   ########.fr       */
+/*   Created: 2023/09/21 11:16:59 by danmarqu          #+#    #+#             */
+/*   Updated: 2023/09/21 16:03:08 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Devuelve el número de caracteres de la cadena "s", sin incluir el nulo de 
-//terminación.
-
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_toupper(int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }
 
 // int main()
 // {
-// 	printf("%zu    ", strlen(""));
-// 	printf("%zu", ft_strlen(""));
+// 	int ej = 120;
+
+// 	printf("mia: %d", ft_toupper(ej));
+// 	printf("\noriginal: %d", toupper(ej));
+
 // }
