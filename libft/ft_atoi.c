@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 19:13:56 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/21 20:02:30 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/09/23 17:58:30 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,19 @@ int	ft_atoi(const char *str)
 	int	num;
 	int	i;
 	int	cont;
-	int	simbol;
 
-	simbol = 0;
 	i = 0;
 	cont = 1;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
-		|| str[i] == '\f' || str[i] == '\r')
+	num = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	while (str[i] == '+' || str[i] == '-')
+	if (str[i] == '-')
 	{
-		simbol++;
-		if (simbol > 1)
-			return (0);
-		if (str[i] == '-')
-			cont = -1;
+		cont = (-1);
 		i++;
 	}
+	else if (str[i] == '+')
+		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		num = num * 10 + (str[i] - '0');
@@ -46,11 +42,19 @@ int	ft_atoi(const char *str)
 	return (num * cont);
 }
 
-int main()
-{
-	char n[] = "  -1123";
-	printf("mia: %d", ft_atoi(n));
-	printf("\noriginal: %d", atoi(n));
-}
+// int main()
+// {
+// 	char *n = "\t\v\f\r\n +1234";
+//  	int i1 = atoi(n);
+//  	int i2 = ft_atoi(n);
+// 	printf("mia: %d", i2);
+//  	printf("\noriginal: %d\n", i1);
+//  	if (i1 == i2)
+//  		exit(printf("succes"));
+//  	exit(printf("fail"));
+// }
+// 	char *n = "345";
+// 	printf("mia: %d", ft_atoi(n));
+// 	printf("\noriginal: %d", atoi(n));
 // if (!str)
 // 	return (0);

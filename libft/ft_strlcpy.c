@@ -6,9 +6,12 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:28:42 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/21 16:02:23 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/09/26 11:47:28 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// strlcpy() copies up to dstsize - 1 characters from the string src to
+//  dst, NUL-terminating the result if dstsize is not 0.
 
 #include "libft.h"
 
