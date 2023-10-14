@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 18:59:52 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/26 16:54:46 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/10/08 17:18:33 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char		*mems1;
 
 	if (!s)
-		return (0);
-	if (start > ft_strlen(s))
-		len = 0;
+		return (NULL);
+	if ((size_t)start > ft_strlen(s))
+		return (ft_strdup(""));
 	if (ft_strlen(s + start) < len)
 		len = ft_strlen(s + start);
-	mems1 = malloc(sizeof(char) * (len + 1));
+	mems1 = (char *)malloc(sizeof(char) * (len + 1));
 	if (!mems1)
 		return (NULL);
 	ft_strlcpy(mems1, (s + start), (len + 1));

@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 16:53:53 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/23 17:14:40 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/10/08 17:17:59 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strdup(const char *s1)
 
 	i = 0;
 	len = ft_strlen(s1);
-	mems1 = malloc(len + 1);
+	mems1 = (char *)malloc(sizeof(char) * (len + 1));
 	if (mems1 == NULL)
 		return (NULL);
 	while (i < len)
