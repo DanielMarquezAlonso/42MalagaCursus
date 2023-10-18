@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 13:46:31 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/10/14 18:51:36 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/10/18 13:23:32 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,18 @@ void	ft_bzero(void *s, size_t n);
  * @param n 
  */
 void	*ft_memcpy(void *s1, const void *s2, size_t n);
+
+/**
+ * @brief Tiene el mismo efecto que "memcpy", pero actúa incluso si 
+ * los "arrays" se solapan. En este caso, se accede a cada valor de
+ *  "s2" antes de almacenar un nuevo valor en ese elemento.
+ * 
+ * @param dst 
+ * @param src 
+ * @param len 
+ * @return void* 
+ */
+void	*ft_memmove(void *dst, const void *src, size_t len);
 
 /**
  * @brief copies up to dstsize - 1 characters from the string src to dst,
@@ -339,5 +351,62 @@ Los números negativos tienen que gestionarse.
  * @return char* 
  */
 char	*ft_itoa(int n);
+
+/**
+ * @brief A cada carácter de la string ’s’, aplica la
+función ’f’ dando como parámetros el índice de cada
+carácter dentro de ’s’ y el propio carácter. Genera
+una nueva string con el resultado del uso sucesivo
+de ’f’.
+ * 
+ * @param s 
+ * @param f 
+ * @return char* 
+ */
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+/**
+ * @brief A cada carácter de la string ’s’, aplica la función
+’f’ dando como parámetros el índice de cada
+carácter dentro de ’s’ y la dirección del propio
+carácter, que podrá modificarse si es necesario.
+ * 
+ */
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+/**
+ * @brief Envía el carácter ’c’ al file descriptor
+especificado.
+ * 
+ * @param c 
+ * @param fd 
+ */
+void	ft_putchar_fd(char c, int fd);
+
+/**
+ * @brief Envía la string ’s’ al file descriptor
+especificado.
+ * 
+ * @param s 
+ * @param fd 
+ */
+void	ft_putstr_fd(char *s, int fd);
+
+/**
+ * @brief Envía la string ’s’ al file descriptor dado,
+seguido de un salto de línea.
+ * 
+ * @param s 
+ * @param fd 
+ */
+void	ft_putendl_fd(char *s, int fd);
+
+/**
+ * @brief Envía el número ’n’ al file descriptor dado.
+ * 
+ * @param n 
+ * @param fd 
+ */
+void	ft_putnbr_fd(int n, int fd);
 
 #endif

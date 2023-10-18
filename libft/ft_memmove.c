@@ -1,46 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 17:32:56 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/10/16 15:58:00 by danmarqu         ###   ########.fr       */
+/*   Created: 2023/10/16 15:20:50 by danmarqu          #+#    #+#             */
+/*   Updated: 2023/10/16 16:07:43 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *s1, const void *s2, size_t n)
+void	*ft_memmove(void *s1, const void *s2, size_t n)
 {
 	size_t	i;
-	char	*aux;
-	char	*aux2;
+	char	*dest;
+	char	*src;
 
-	i = 0;
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
-	aux = (char *)s1;
-	aux2 = (char *)s2;
-	while (i < n)
+	i = 0;
+	dest = (char *)s1;
+	src = (char *)s2;
+	if (dest > src)
 	{
-		aux[i] = aux2[i];
-		i++;
+		while (n-- > 0)
+			dest[n] = src[n];
 	}
-	return (aux);
+	else
+	{
+		while (i < n)
+		{
+			dest[i] = src[i];
+			i++;
+		}
+	}
+	return (dest);
 }
 
 // int main() {
 //     char dest[20] = "armar";
 //     const char src[20] = "hola";
+// 	char dest2[20] = "armar";
+//     const char src2[20] = "hola";
 //     size_t n = 2;
 
 // 	printf(" antes de %s", dest);
-// 	ft_memcpy(dest, src, n);
-// 	printf(" despues de %s", dest);
-// 	// printf(" antes de %s", dest);
-// 	// memcpy(dest, src, n);
-// 	// printf(" despues de %s", dest);
+// 	ft_memmove(dest, src, n);
+// 	printf(" \ndespues de %s", dest);
+// 	printf(" \nORIGINALantes de %s", dest2);
+// 	memmove(dest2, src2, n);
+// 	printf(" \ndespues de %s", dest2);
 
 // }
