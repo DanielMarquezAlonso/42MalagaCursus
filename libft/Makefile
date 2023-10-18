@@ -7,9 +7,11 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 		ft_strtrim.c ft_split.c ft_itoa.c ft_memmove.c \
 		ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+BONUSSRC = ft_lstnew.c
 NAME = libft.a
 OBJ = ${SRC:.c=.o}
-CC = gcc
+BONUS_OBJ = ${BONUSSRC:.c=.o}
+CC = cc
 FLAGS = -Wall -Wextra -Werror
 
 all : ${NAME}
@@ -17,6 +19,8 @@ all : ${NAME}
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
+bonus: $(OBJ) $(BONUS_OBJ)
+	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
 clean :
 	rm -f ${OBJ}
 

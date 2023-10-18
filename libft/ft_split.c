@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 16:50:33 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/10/14 18:44:32 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:54:52 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 #include "libft.h"
 
-int	destroy(char **array)
+static int	destroy(char **array)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ int	destroy(char **array)
 	return (-1);
 }
 
-size_t	counterword(char const *s, char c)
+static size_t	counterword(char const *s, char c)
 {
 	size_t	count;
 	size_t	j;

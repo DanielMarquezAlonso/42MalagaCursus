@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 13:46:31 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/10/18 13:23:32 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/10/18 16:43:53 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -408,5 +408,38 @@ void	ft_putendl_fd(char *s, int fd);
  * @param fd 
  */
 void	ft_putnbr_fd(int n, int fd);
+
+/**
+ * 
+ * 
+ * 
+ * BONUS
+ * 
+ * 
+ */
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+/**
+ * t_list	*test;
+ test->name = "hola";
+ printf("%s", test->name);
+test = test->next;
+ test->name = "adios";
+ * 
+ */
+/**
+ * @brief Crea un nuevo nodo utilizando malloc(3). La
+variable miembro ’content’ se inicializa con el
+contenido del parámetro ’content’. La variable
+’next’, con NULL.
+ * 
+ * @param content 
+ * @return t_list* 
+ */
+t_list	*ft_lstnew(void *content);
 
 #endif

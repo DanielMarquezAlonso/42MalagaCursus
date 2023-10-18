@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 16:52:40 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/10/02 16:44:47 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:56:55 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 #include "libft.h"
 
-int	checkset(char c, char const *set)
+static int	checkset(char c, char const *set)
 {
 	size_t	i;
 
