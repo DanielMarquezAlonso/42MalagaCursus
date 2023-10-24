@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 16:07:16 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/10/18 17:55:18 by danmarqu         ###   ########.fr       */
+/*   Created: 2023/10/19 14:02:40 by danmarqu          #+#    #+#             */
+/*   Updated: 2023/10/19 14:34:56 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*node;
+	t_list	*aux;
 
-	node = malloc(sizeof(t_list));
-	if (!node)
-		return (NULL);
-	node->content = content;
-	node->next = NULL;
-	return (node);
+	aux = *lst;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	while (aux->next != NULL)
+	{
+		aux = aux->next;
+	}
+	aux->next = new;
 }

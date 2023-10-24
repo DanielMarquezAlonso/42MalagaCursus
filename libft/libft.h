@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 13:46:31 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/10/18 16:43:53 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/10/24 12:54:14 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -441,5 +441,81 @@ contenido del parámetro ’content’. La variable
  * @return t_list* 
  */
 t_list	*ft_lstnew(void *content);
+
+/**
+ * @brief Añade el nodo ’new’ al principio de la lista ’lst’.
+ * 
+ * @param lst 
+ * @param new 
+ */
+void	ft_lstadd_front(t_list **lst, t_list *new);
+
+/**
+ * @brief Cuenta el número de nodos de una lista. 
+ * 
+ * @param lst 
+ * @return int 
+ */
+int		ft_lstsize(t_list *lst);
+
+/**
+ * @brief Devuelve el último nodo de la lista.
+ * 
+ * @param lst 
+ * @return t_list* 
+ */
+t_list	*ft_lstlast(t_list *lst);
+
+/**
+ * @brief Añade el nodo ’new’ al final de la lista ’lst’.
+ * 
+ * @param lst 
+ * @param new 
+ */
+void	ft_lstadd_back(t_list **lst, t_list *new);
+
+/**
+ * @brief Toma como parámetro un nodo ’lst’ y libera la
+memoria del contenido utilizando la función ’del’
+dada como parámetro, además de liberar el nodo. La
+memoria de ’next’ no debe liberarse.
+ * 
+ * @param lst 
+ * @param del 
+ */
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+
+/**
+ * @brief Elimina y libera el nodo ’lst’ dado y todos los
+consecutivos de ese nodo, utilizando la función
+’del’ y free(3).
+Al final, el puntero a la lista debe ser NULL.
+ * 
+ */
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+
+/**
+ * @brief Itera la lista ’lst’ y aplica la función ’f’ en el
+contenido de cada nodo.
+ * 
+ * @param lst 
+ * @param f 
+ */
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+
+/**
+ * @brief Itera la lista ’lst’ y aplica la función ’f’ al
+contenido de cada nodo. Crea una lista resultante
+de la aplicación correcta y sucesiva de la función
+’f’ sobre cada nodo. La función ’del’ se utiliza
+para eliminar el contenido de un nodo, si hace
+falta.
+ * 
+ * @param lst 
+ * @param f 
+ * @param del 
+ * @return t_list* 
+ */
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
