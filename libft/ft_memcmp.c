@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 17:35:44 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/21 17:44:47 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:09:37 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	char	*aux;
-	char	*aux2;
+	size_t			i;
+	unsigned char	*aux;
+	unsigned char	*aux2;
 
 	i = 0;
 	aux = (unsigned char *)s1;

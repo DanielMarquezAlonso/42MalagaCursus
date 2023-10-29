@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 17:45:35 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/21 19:00:13 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:02:14 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	char	*aux;
 	char	*aux2;
 
+	aux = (char *) haystack;
+	aux2 = (char *) needle;
 	if (*needle == '\0')
-		return (haystack);
+		return (aux);
 	i = 0;
-	aux = (unsigned char *) haystack;
-	aux2 = (unsigned char *) needle;
 	while (aux[i] != '\0' && len > i)
 	{
 		x = i;

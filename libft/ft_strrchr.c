@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 13:44:58 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/21 16:02:55 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:45:28 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,14 @@ char	*ft_strrchr(const char *s, int c)
 	int		i;
 
 	aux = (char *) s;
-	i = 0;
-	while (s[i] != '\0')
-		i++;
+	i = ft_strlen(s);
 	while (i >= 0)
 	{
 		if (aux[i] == (unsigned char)c)
 			return (&aux[i]);
 		i--;
 	}
-	if (aux[i] == (unsigned char)c)
+	if (c == 0)
 		return (&aux[i]);
 	return (0);
 }

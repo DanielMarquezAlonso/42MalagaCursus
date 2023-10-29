@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 16:50:33 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/10/18 15:54:52 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:13:50 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ char	**ft_split(char const *s, char c)
 {
 	char	**array;
 	size_t	i;
-	size_t	j;
 	size_t	a;
 
 	i = 0;
@@ -96,50 +95,23 @@ char	**ft_split(char const *s, char c)
 
 // int main()
 // {
-// 	char *aux = "  hola que    tal todos";
-// 	char ej = ' ';
-// 	printf("%zu", counterword(aux, ej));
-// }
 
-	// array = malloc((counterword(s, c) + 1) * sizeof(char *));
-	// if (!array)
-	// 	return (0);
+//     char *str = "Esta es una prueba";
+//     char **result = ft_split(str, ' ');
 
-// char	**ft_split(char const *s, char c)
-// {
-// 	char	**array;
-// 	size_t	i;
-// 	size_t	j;
-// 	size_t	a;
-
-// 	i = 0;
-// 	a = 0;
-// 	array = malloc((counterword(s, c) + 1) * sizeof(char *));
-// 	if (!array)
-// 		return (0);
-// 	while (s[i] != '\0')
+// 	int i = 0;
+// 	while (result[i] != NULL)
 // 	{
-// 		if (s[i] != c && s[i] != '\0')
-// 		{
-// 			j = i;
-// 			while (s[i] != c && s[i] != '\0')
-// 				i++;
-// 			array[a++] = ft_substr(s, j, i - j);
-// 			if (!array[a - 1])
-// 				return (destroy(array));
-// 		}
-// 		else
-// 			i++;
+// 		printf("Palabra: %s\n", result[i]);
+// 		i++;
 // 	}
-// 	array[a] = NULL;
-// 	return (array);
-// }
-// char	*ft_malloc(char **array, size_t words)
-// {
-// 	if (!array)
-// 		return (0);
-// 	array = malloc(words * sizeof(char *));
-// 	if (!array)
-// 		return (0);
-// 	return (array);
+// 	// Limpia la memoria
+// 	i = 0;
+// 	while (result[i] != NULL)
+// 	{
+// 		free(result[i]);
+// 		i++;
+// 	}
+// 	free(result);
+//     return 0;
 // }

@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 18:49:56 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/10/18 15:55:28 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:52:01 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,8 @@ char	*ft_itoa(int n)
 
 // int	main(void)
 // {	
-// 	long int	num;
+// 	char *ej = ft_itoa(324);
 
-// 	num = ft_intlen(0100);
-// 	printf("%ld", num);
+// 	printf("%s", ej);
 // 	return (0);
-// }
+// }	

@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 16:19:43 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/09/23 17:09:07 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:12:01 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
-	char	*aux;
-	char	*aux2;
+	size_t			i;
+	unsigned char	*aux;
+	unsigned char	*aux2;
 
 	i = 0;
 	aux = (unsigned char *)s1;
