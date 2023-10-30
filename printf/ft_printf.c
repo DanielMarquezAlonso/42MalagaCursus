@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 19:29:03 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/10/29 22:27:29 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/10/30 21:54:07 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,21 @@ static void	ft_printchar(char c, int *cont)
 	(*cont)++;
 }
 
-static void	ft_get_type(char type, va_list arg, int *cont)
+static void	ft_get_type(const 	char type, va_list arg, int *cont)
 {
-	int	c;
-
 	if (type == 'c')
-	{
-		c = va_arg(arg, int);
-		write(1, &c, 1);
-		(*cont)++;
-	}
+		ft_printchar(va_arg(arg, int), cont);
+	else if (type == 's')
+		ft_printstr(va_arg(arg, char *), cont);
+	// else if (type == 'p')
+	// 	ft_print_ptr(va_arg(arg, unsigned long long));
+	else if (type == 'd' || type == 'i')
+		ft_printnbr(va_arg(arg, int), cont);
+	else if (type == 'u')
+		ft_print_unsigned_nbr(va_arg(arg, unsigned int), cont);
+	// else if (type == 'x')
+	// 	ft_print_hex_nbr(va_arg(arg, unsigned int), cont);
+
 }
 
 int	ft_printf(char const *s, ...)
@@ -60,8 +65,8 @@ int main()
 {
 	int num = 0;
 	int num2 = 0;
-	num = ft_printf("Hola que %c taa", 'k');
+	//num = ft_printf("que %s tengo %d años,unsigned: %u", "hola", 17, 20);
 	printf("\n");
-	num2 = printf("Hola que %c taa", 'k');
+	num2 = printf("que %s tengo %d años,unsigned: %x", "hola", 17, 2200);
 	printf("\nel tamaño es %d y el del original: %d", num, num2);
 }

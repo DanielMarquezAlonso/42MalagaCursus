@@ -1,4 +1,4 @@
-SRC = ft_printf.c
+SRC = ft_printf.c ft_printf_aux.c ft_printf_aux2.c
 
 NAME = printf.a
 OBJ = $(SRC:.c=.o)
