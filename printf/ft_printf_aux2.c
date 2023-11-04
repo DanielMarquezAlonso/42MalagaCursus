@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:20:41 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/10/30 21:54:10 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/11/04 19:50:46 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,3 +59,4 @@ void ft_print_unsigned_nbr(unsigned int n, int *cont)
     ft_printstr(strnum, cont);
     free(strnum);
 }
+
