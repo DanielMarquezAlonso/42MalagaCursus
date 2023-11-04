@@ -5,24 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 20:08:03 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/10/30 21:54:08 by danmarqu         ###   ########.fr       */
+/*   Created: 2023/11/03 15:17:21 by danmarqu          #+#    #+#             */
+/*   Updated: 2023/11/03 19:56:53 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void ft_printstr(char *s, int *cont)
+void	ft_printstr(char *s, int *cont)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(s[i])
-    {
-        write(1, &s[i], 1);
-        i++;
-        (*cont)++;
-    }
+	i = 0;
+	if (!s)
+	{
+		write(1, "(null)", 6);
+		(*cont) += 6;
+		return ;
+	}
+	while (s[i] != '\0')
+	{
+		write(1, &s[i], 1);
+		i++;
+		(*cont)++;
+	}
 }
 
 static size_t	ft_intlen(int n)
@@ -40,7 +46,7 @@ static size_t	ft_intlen(int n)
 	return (cont);
 }
 
-char	*ft_itoa(int n)
+static char	*ft_itoa(int n)
 {
 	long	nb;
 	size_t	numlen;
@@ -69,11 +75,11 @@ char	*ft_itoa(int n)
 	return (mem);
 }
 
-void ft_printnbr(int n, int *cont)
+void	ft_printnbr(int n, int *cont)
 {
-    char *strnum;
-    
-    strnum = ft_itoa(n);
-    ft_printstr(strnum, cont);
-    free(strnum);
+	char	*strnum;
+
+	strnum = ft_itoa(n);
+	ft_printstr(strnum, cont);
+	free(strnum);
 }

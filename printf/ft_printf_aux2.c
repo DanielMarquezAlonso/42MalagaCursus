@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 21:20:41 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/11/04 19:50:46 by danmarqu         ###   ########.fr       */
+/*   Created: 2023/11/03 15:17:41 by danmarqu          #+#    #+#             */
+/*   Updated: 2023/11/04 19:56:57 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static size_t	ft_unsignedintlen(unsigned int n)
 {
@@ -27,7 +27,7 @@ static size_t	ft_unsignedintlen(unsigned int n)
 	return (cont);
 }
 
-char	*ft_unsigneditoa(unsigned int n)
+static char	*ft_unsigneditoa(unsigned int n)
 {
 	long	nb;
 	size_t	numlen;
@@ -51,12 +51,36 @@ char	*ft_unsigneditoa(unsigned int n)
 	return (mem);
 }
 
-void ft_print_unsigned_nbr(unsigned int n, int *cont)
+void	ft_print_unsigned_nbr(unsigned int n, int *cont)
 {
-    char *strnum;
-    
-    strnum = ft_unsigneditoa(n);
-    ft_printstr(strnum, cont);
-    free(strnum);
+	char	*strnum;
+
+	strnum = ft_unsigneditoa(n);
+	ft_printstr(strnum, cont);
+	free(strnum);
 }
 
+void	ft_put_ptr(uintptr_t ptr, int *cont)
+{
+	if (ptr >= 16)
+	{
+		ft_put_ptr(ptr / 16, cont);
+		ft_put_ptr(ptr % 16, cont);
+	}
+	else
+	{
+		if (ptr <= 9)
+			ft_printchar(ptr + '0', cont);
+		else
+			ft_printchar(ptr - 10 + 'a', cont);
+	}
+}
+
+void	ft_print_ptr(uintptr_t ptr, int *cont)
+{
+	(*cont) += write(1, "0x", 2);
+	if (ptr == 0)
+		(*cont) += write(1, "0", 1);
+	else
+		ft_put_ptr(ptr, cont);
+}

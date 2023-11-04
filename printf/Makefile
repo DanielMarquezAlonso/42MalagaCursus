@@ -1,6 +1,6 @@
-SRC = ft_printf.c ft_printf_aux.c ft_printf_aux2.c
+SRC = ft_printf.c ft_printf_aux.c ft_printf_aux2.c ft_printf_aux3.c
 
-NAME = printf.a
+NAME = libftprintf.a
 OBJ = $(SRC:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
