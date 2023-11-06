@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 19:29:03 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/11/03 19:56:46 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:35:01 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_printchar(char c, int *cont)
 	(*cont)++;
 }
 
-static void	ft_get_type(const char type, va_list arg, int *cont)
+static int	ft_get_type(const char type, va_list arg, int *cont)
 {
 	if (type == 'c')
 		ft_printchar(va_arg(arg, int), cont);
@@ -27,13 +27,20 @@ static void	ft_get_type(const char type, va_list arg, int *cont)
 	else if (type == 'p')
 		ft_print_ptr(va_arg(arg, uintptr_t), cont);
 	else if (type == 'd' || type == 'i')
-		ft_printnbr(va_arg(arg, int), cont);
+	{
+		if (ft_printnbr(va_arg(arg, int), cont) == (-1))
+			return (-1);
+	}
 	else if (type == 'u')
-		ft_print_unsigned_nbr(va_arg(arg, unsigned int), cont);
+	{
+		if (ft_print_unsigned_nbr(va_arg(arg, unsigned int), cont) == (-1))
+			return (-1);
+	}
 	else if (type == 'x' || type == 'X')
 		ft_print_hex(va_arg(arg, unsigned int), type, cont);
 	else if (type == '%')
 		ft_printchar('%', cont);
+	return (0);
 }
 
 int	ft_printf(char const *s, ...)
@@ -52,7 +59,8 @@ int	ft_printf(char const *s, ...)
 		if (s[i] == '%')
 		{
 			i++;
-			ft_get_type(s[i], arg, &cont);
+			if (ft_get_type(s[i], arg, &cont) == (-1))
+				return (-1);
 		}
 		else
 			ft_printchar(s[i], &cont);
@@ -66,9 +74,9 @@ int	ft_printf(char const *s, ...)
 // {
 // 	int num = 0;
 // 	int num2 = 0;
-// 	unsigned int ej = 42;
-// 	num = ft_printf("que %s to %d,he con x: %x _ %X", (char *)NULL, 17, ej, ej);
+// 	unsigned int ej = 302;
+// 	num = ft_printf("que  to %d,he con x: %x _ %X", -10, 17, ej);
 // 	printf("\n");
-// 	num2 = printf("que %s to %d,hexa con x: %x _ %X", (char *)NULL, 17, ej, ej);
+// 	num2 = printf("que  to %d,hexa con x: %x _ %X", -10, 17, ej);
 // 	printf("\nel tamaño es %d y el del original: %d", num, num2);
 // }

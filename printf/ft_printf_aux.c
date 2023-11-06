@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:17:21 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/11/03 19:56:53 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:33:05 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,14 @@ static char	*ft_itoa(int n)
 	return (mem);
 }
 
-void	ft_printnbr(int n, int *cont)
+int	ft_printnbr(int n, int *cont)
 {
 	char	*strnum;
 
 	strnum = ft_itoa(n);
+	if (strnum == NULL)
+		return (-1);
 	ft_printstr(strnum, cont);
 	free(strnum);
+	return (0);
 }

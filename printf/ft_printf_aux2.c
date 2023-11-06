@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:17:41 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/11/04 19:56:57 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:35:03 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,19 @@ static char	*ft_unsigneditoa(unsigned int n)
 	return (mem);
 }
 
-void	ft_print_unsigned_nbr(unsigned int n, int *cont)
+int	ft_print_unsigned_nbr(unsigned int n, int *cont)
 {
 	char	*strnum;
 
 	strnum = ft_unsigneditoa(n);
+	if (strnum == NULL)
+		return (-1);
 	ft_printstr(strnum, cont);
 	free(strnum);
+	return (0);
 }
 
-void	ft_put_ptr(uintptr_t ptr, int *cont)
+static void	ft_put_ptr(uintptr_t ptr, int *cont)
 {
 	if (ptr >= 16)
 	{

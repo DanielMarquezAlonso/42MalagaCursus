@@ -6,13 +6,13 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:58:30 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/11/03 19:20:47 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:34:59 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_char_hexa(unsigned int nbr, char conversion, int *cont)
+static void	ft_char_hexa(unsigned int nbr, char conversion, int *cont)
 {
 	if (nbr >= 16)
 	{

@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 20:04:34 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/11/04 19:57:02 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:35:05 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 int		ft_printf(char const *s, ...);
 void	ft_printchar(char c, int *cont);
 void	ft_printstr(char *s, int *cont);
-void	ft_printnbr(int n, int *cont);
-void	ft_print_unsigned_nbr(unsigned int n, int *cont);
+int		ft_printnbr(int n, int *cont);
+int		ft_print_unsigned_nbr(unsigned int n, int *cont);
 void	ft_print_ptr(uintptr_t ptr, int *cont);
 void	ft_print_hex(unsigned int nbr, char conversion, int *cont);
 
