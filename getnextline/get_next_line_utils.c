@@ -6,25 +6,25 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:18:54 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/11/09 18:27:44 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:48:42 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-// void	ft_bzero(void *s, size_t n)
-// {
-// 	size_t	i;
-// 	char	*aux;
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
+	char	*aux;
 
-// 	i = 0;
-// 	aux = (char *)s;
-// 	while (i < n)
-// 	{
-// 		aux[i] = 0;
-// 		i++;
-// 	}
-// }
+	i = 0;
+	aux = (char *)s;
+	while (i < n)
+	{
+		aux[i] = 0;
+		i++;
+	}
+}
 
 // void	*ft_calloc(size_t count, size_t size)
 // {
