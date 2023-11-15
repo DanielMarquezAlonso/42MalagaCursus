@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:59:00 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/11/13 18:51:52 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/11/15 20:14:31 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
 # endif
 
 char	*get_next_line(int fd);
-void	ft_bzero(void *s, size_t n);
+size_t	ft_strlen(const char *s);
+char	*ft_strchr(const char *s, int c);
 
 //void	*ft_calloc(size_t count, size_t size);
 
