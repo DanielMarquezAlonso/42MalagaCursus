@@ -6,17 +6,11 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:19:03 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/11/20 18:22:34 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/11/21 19:46:30 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-char	*clean(char *buffer)
-{
-	free(buffer);
-	return (NULL);
-}
 
 char	*ft_join_and_free(char *staticbuffer, char *buffer)
 {
@@ -54,27 +48,27 @@ char	*ft_line(char *buffer)
 
 char	*ft_next(char *buffer)
 {
+	char	*line;
 	int		i;
 	int		j;
-	char	*line;
 
 	i = 0;
-	// find len of first line
+	j = 0;
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
-	// if eol == \0 return NULL
-	if (!buffer[i])
+	if (buffer[i] == '\0')
 	{
 		free(buffer);
 		return (NULL);
 	}
-	// len of file - len of firstline + 1
-	line = ft_calloc((ft_strlen(buffer) - i + 1), sizeof(char));
+	line = ft_calloc((ft_strlen(buffer) - 1 + 1), sizeof(char));
 	i++;
-	j = 0;
-	// line == buffer
 	while (buffer[i])
-		line[j++] = buffer[i++];
+	{
+		line[j] = buffer[i];
+		j++;
+		i++;
+	}
 	free(buffer);
 	return (line);
 }
@@ -111,7 +105,11 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
-		return (clean(buffer));
+	{
+		free(buffer);
+		buffer = NULL;
+		return (NULL);
+	}
 	buffer = read_file(fd, buffer);
 	if (!buffer)
 		return (NULL);
@@ -126,8 +124,8 @@ char	*get_next_line(int fd)
 // 	int		count;
 
 // 	count = 1;
-// 	fd = open("example.txt", O_RDONLY);
-// 	while (count <= 4)
+// 	fd = open("read_error.txt", O_RDONLY);
+// 	while (count <= 6)
 // 	{
 // 		printf("%d:%s", count, get_next_line(fd));
 // 		count++;
