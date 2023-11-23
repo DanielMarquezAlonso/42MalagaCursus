@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 16:19:03 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/11/23 15:55:43 by danmarqu         ###   ########.fr       */
+/*   Created: 2023/11/23 16:39:28 by danmarqu          #+#    #+#             */
+/*   Updated: 2023/11/23 16:49:02 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_join_and_free(char *staticbuffer, char *buffer)
 {

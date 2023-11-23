@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 15:59:00 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/11/23 15:38:34 by danmarqu         ###   ########.fr       */
+/*   Created: 2023/11/23 16:39:20 by danmarqu          #+#    #+#             */
+/*   Updated: 2023/11/23 16:48:59 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdio.h>
 # include <fcntl.h>
