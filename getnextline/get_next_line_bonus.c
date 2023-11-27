@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 16:39:28 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/11/23 16:49:02 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:01:39 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,35 +101,19 @@ char	*read_file(int fd, char *rest)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
+	static char	*buffer[OPEN_MAX];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 	{
-		free(buffer);
-		buffer = NULL;
+		free(buffer[fd]);
+		buffer[fd] = NULL;
 		return (NULL);
 	}
-	buffer = read_file(fd, buffer);
-	if (!buffer)
+	buffer[fd] = read_file(fd, buffer[fd]);
+	if (!buffer[fd])
 		return (NULL);
-	line = ft_line(buffer);
-	buffer = ft_next(buffer);
+	line = ft_line(buffer[fd]);
+	buffer[fd] = ft_next(buffer[fd]);
 	return (line);
 }
-
-// int	main(void)
-// {
-// 	int		fd;
-// 	int		count;
-
-// 	count = 0;
-// 	fd = open("example.txt", O_RDONLY);
-// 	while (count <= fd)
-// 	{
-// 		printf("%d:%s", count, get_next_line(fd));
-// 		count++;
-// 	}
-// 	close(fd);
-// 	return (0);
-// }

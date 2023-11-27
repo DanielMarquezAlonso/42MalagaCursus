@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:19:03 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/11/23 15:55:43 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:00:59 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,19 +117,3 @@ char	*get_next_line(int fd)
 	buffer = ft_next(buffer);
 	return (line);
 }
-
-// int	main(void)
-// {
-// 	int		fd;
-// 	int		count;
-
-// 	count = 0;
-// 	fd = open("example.txt", O_RDONLY);
-// 	while (count <= fd)
-// 	{
-// 		printf("%d:%s", count, get_next_line(fd));
-// 		count++;
-// 	}
-// 	close(fd);
-// 	return (0);
-// }

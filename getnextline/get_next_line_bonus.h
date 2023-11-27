@@ -6,13 +6,14 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 16:39:20 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/11/23 16:48:59 by danmarqu         ###   ########.fr       */
+/*   Updated: 2023/11/27 15:39:22 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
+# include <limits.h>
 # include <stdio.h>
 # include <fcntl.h>
 # include <stdlib.h>
