@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 11:43:41 by danmarqu          #+#    #+#             */
-/*   Updated: 2024/01/08 11:45:18 by danmarqu         ###   ########.fr       */
+/*   Created: 2023/10/24 12:24:43 by danmarqu          #+#    #+#             */
+/*   Updated: 2023/10/24 12:44:13 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <sys/types.h>
-# include <sys/wait.h>
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	t_list	*node;
 
-#endif
+	if (lst)
+	{
+		while (*lst)
+		{
+			node = (*lst)->next;
+			ft_lstdelone(*lst, del);
+			*lst = node;
+		}
+		*lst = NULL;
+	}
+}
