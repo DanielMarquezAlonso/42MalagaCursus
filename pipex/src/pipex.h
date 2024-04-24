@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:43:41 by danmarqu          #+#    #+#             */
-/*   Updated: 2024/04/11 16:13:26 by danmarqu         ###   ########.fr       */
+/*   Updated: 2024/04/24 18:14:08 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <string.h>
 # include <fcntl.h>  
 # include <sys/types.h>
 # include <sys/wait.h>
 
 void	exit_handler(int exit);
+void	execute(char *argv, char **envp);
+char	*find_path(char *cmd, char **envp);
+void	error(void);
 
 #endif
