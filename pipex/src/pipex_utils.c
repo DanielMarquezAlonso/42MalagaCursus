@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 12:58:56 by danmarqu          #+#    #+#             */
-/*   Updated: 2024/04/24 18:16:15 by danmarqu         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:14:07 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,19 @@ void	error(void)
 {
 	perror("\033[31mError");
 	exit(EXIT_FAILURE);
+}
+
+int	open_file(char *file, int in_or_out)
+{
+	int	ret;
+
+	if (in_or_out == 0)
+		ret = open(file, O_RDONLY, 0777);
+	if (in_or_out == 1)
+		ret = open(file, O_WRONLY | O_CREAT | O_TRUNC, 0777);
+	if (ret == -1)
+		exit(0);
+	return (ret);
 }
 
 char	*find_path(char *cmd, char **envp)
@@ -50,7 +63,7 @@ char	*find_path(char *cmd, char **envp)
 void	execute(char *argv, char **envp)
 {
 	char		**cmd;
-	int				i;
+	int			i;
 	char		*path;
 
 	i = -1;
