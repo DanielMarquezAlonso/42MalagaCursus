@@ -1,4 +1,4 @@
-SRC = src/push_swap.c 
+SRC = src/push_swap.c  src/ft_isnumber.c
 HEADER = includes/push_swap.h
 
 NAME = push_swap

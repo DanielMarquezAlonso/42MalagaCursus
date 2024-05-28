@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isnumber.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:42:09 by danmarqu          #+#    #+#             */
-/*   Updated: 2024/05/23 15:05:47 by danmarqu         ###   ########.fr       */
+/*   Updated: 2024/05/27 15:15:26 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+int	isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
@@ -18,7 +18,7 @@ int	ft_isdigit(int c)
 // Función para imprimir mensajes de error
 
 // Función para comprobar si una cadena representa un número entero
-int	is_number(const char *str)
+int	ft_isnumber(const char *str)
 {
 	if (*str == '-' || *str == '+' || *str == ' ')
 		str++;
@@ -26,7 +26,7 @@ int	is_number(const char *str)
 		return (0);
 	while (*str)
 	{
-		if (!ft_isdigit(*str))
+		if (!isdigit(*str))
 			return (0);
 		str++;
 	}

@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 20:04:34 by danmarqu          #+#    #+#             */
-/*   Updated: 2023/11/06 16:35:05 by danmarqu         ###   ########.fr       */
+/*   Updated: 2024/05/28 12:10:42 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdarg.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <stdint.h>
 
 int		ft_printf(char const *s, ...);
 void	ft_printchar(char c, int *cont);
