@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:42:09 by danmarqu          #+#    #+#             */
-/*   Updated: 2024/05/27 15:15:26 by danmarqu         ###   ########.fr       */
+/*   Updated: 2024/06/03 13:11:32 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,46 @@ int	isdigit(int c)
 
 // Función para imprimir mensajes de error
 
-// Función para comprobar si una cadena representa un número entero
 int	ft_isnumber(const char *str)
 {
-	if (*str == '-' || *str == '+' || *str == ' ')
-		str++;
-	if (*str == '\0')
-		return (0);
+	int	has_digits;
+
+	has_digits = 0;
+
 	while (*str)
 	{
-		if (!isdigit(*str))
+		if (*str == ' ')
+		{
+			str++;
+		}
+		else if (*str == '-' || *str == '+')
+		{
+			if (has_digits)
+				return (0);
+			str++;
+		}
+		else if (!isdigit(*str))
 			return (0);
-		str++;
+		else
+		{
+			has_digits = 1;
+			str++;
+		}
 	}
-	return (1);
+	return (has_digits);
 }
+// Función para comprobar si una cadena representa un número entero
+// int	ft_isnumber(const char *str)
+// {
+// 	while (*str == '-' || *str == '+' || *str == ' ')
+// 		str++;
+// 	//if (*str == '\0')
+// 	//	return (0);
+// 	while (*str)
+// 	{
+// 		if (!isdigit(*str))
+// 			return (0);
+// 		str++;
+// 	}
+// 	return (1);
+// }

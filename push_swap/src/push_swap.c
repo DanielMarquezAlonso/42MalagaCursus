@@ -6,7 +6,7 @@
 /*   By: danmarqu <danmarqu@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:05:04 by danmarqu          #+#    #+#             */
-/*   Updated: 2024/05/28 13:12:54 by danmarqu         ###   ########.fr       */
+/*   Updated: 2024/06/03 12:50:14 by danmarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	parsing(int argc, char **argv)
 	t_list		*stack_a;
 	//t_list	*stack_b;
 	int				i;
+	int				num;
 	char		**str;
 
 	stack_a = NULL;
@@ -55,13 +56,23 @@ void	parsing(int argc, char **argv)
 		i = 0;
 		str = ft_split(argv[1], ' ');
 		while (str && str[i])
-			new_stack(&stack_a, ft_atoi(str[i++]));
+		{
+			num = ft_atoi(str[i]);
+			new_stack(&stack_a, num);
+			ft_printf("Numero: %d\n", num);
+			i++;
+		}
 	}
 	else if (argc > 2)
 	{
 		i = 1;
 		while (argv[i])
-			new_stack(&stack_a, ft_atoi(argv[i++]));
+		{
+			num = ft_atoi(argv[i]);
+			new_stack(&stack_a, num);
+			ft_printf("Numero: %d\n", num);
+			i++;
+		}
 	}
 }
 

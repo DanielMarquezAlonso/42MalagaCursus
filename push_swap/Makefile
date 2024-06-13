@@ -3,7 +3,7 @@ HEADER = includes/push_swap.h
 
 NAME = push_swap
 OBJ = $(SRC:.c=.o)
-CC = gcc
+CC = cc
 INCLUDES	= -I ./libft -I ./src
 LIBFT		= ./libft/libft.a
 LIBS		= -L./libft -lft
